@@ -23,7 +23,7 @@ test('cancel event', () => {
   const onCancel = jest.fn();
 
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       value: 'test',
       showAction: true,
     },
@@ -65,7 +65,7 @@ test('search event', () => {
 
 test('label slot', () => {
   const wrapper = mount(Search, {
-    scopedSlots: {
+    slots: {
       label: () => 'Custom Label',
     },
   });
@@ -75,7 +75,7 @@ test('label slot', () => {
 
 test('left slot', () => {
   const wrapper = mount(Search, {
-    scopedSlots: {
+    slots: {
       left: () => 'Custom Left Content',
     },
   });
@@ -85,7 +85,7 @@ test('left slot', () => {
 
 test('left-icon prop', () => {
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       leftIcon: 'setting-o',
     },
   });
@@ -95,7 +95,7 @@ test('left-icon prop', () => {
 
 test('right-icon prop', () => {
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       rightIcon: 'setting-o',
     },
   });
@@ -105,7 +105,7 @@ test('right-icon prop', () => {
 
 test('right-icon slot', () => {
   const wrapper = mount(Search, {
-    scopedSlots: {
+    slots: {
       'right-icon': () => 'Custom Right Icon',
     },
   });
@@ -115,7 +115,7 @@ test('right-icon slot', () => {
 
 test('action-text prop', () => {
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       actionText: 'Custom Text',
       showAction: true,
     },

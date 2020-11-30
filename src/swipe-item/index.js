@@ -2,7 +2,7 @@ import { computed, nextTick, onMounted, reactive } from 'vue';
 import { SWIPE_KEY } from '../swipe';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe-item');
 
@@ -46,7 +46,10 @@ export default createComponent({
       const maxActive = parent.count.value - 1;
       const prevActive = active === 0 && loop ? maxActive : active - 1;
       const nextActive = active === maxActive && loop ? 0 : active + 1;
-      rendered = index.value >= prevActive && index.value <= nextActive;
+      rendered =
+        index.value === active ||
+        index.value === prevActive ||
+        index.value === nextActive;
 
       return rendered;
     });

@@ -76,9 +76,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| add | Triggered when click add button | - |
-| edit | Triggered when click edit button | _contact: Contact，index: number_ |
-| select | Triggered when select contact | _contact: Contact, index: number_ |
+| add | Emitted when the add button is clicked | - |
+| edit | Emitted when the edit button is clicked | _contact: Contact，index: number_ |
+| select | Emitted when a contact is selected | _contact: Contact, index: number_ |
 
 ### Data Structure of Contact
 
@@ -88,3 +88,13 @@ export default {
 | name      | Name               | _string_           |
 | tel       | Phone              | _string_           |
 | isDefault | Is default contact | _boolean_          |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value | Description |
+| -------------------------------- | ------------- | ----------- |
+| @contact-list-edit-icon-size     | `16px`        | -           |
+| @contact-list-add-button-z-index | `999`         | -           |
+| @contact-list-item-padding       | `@padding-md` | -           |

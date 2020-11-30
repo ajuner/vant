@@ -34,21 +34,15 @@ app.use(NoticeBar);
 ### Wrapable
 
 ```html
-<van-notice-bar wrapable :scrollable="false">
-  Notice Content
-</van-notice-bar>
+<van-notice-bar wrapable :scrollable="false"> Notice Content </van-notice-bar>
 ```
 
 ### Mode
 
 ```html
-<van-notice-bar mode="closeable">
-  Notice Content
-</van-notice-bar>
+<van-notice-bar mode="closeable"> Notice Content </van-notice-bar>
 
-<van-notice-bar mode="link">
-  Notice Content
-</van-notice-bar>
+<van-notice-bar mode="link"> Notice Content </van-notice-bar>
 ```
 
 ### Custom Style
@@ -88,7 +82,7 @@ app.use(NoticeBar);
 ### Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | mode | Mode, can be set to `closeable` `link` | _string_ | `''` |
 | text | Notice text content | _string_ | `''` | - |
 | color | Text color | _string_ | `#f60` |
@@ -101,11 +95,11 @@ app.use(NoticeBar);
 
 ### Events
 
-| Event           | Description                    | Arguments      |
-| --------------- | ------------------------------ | -------------- |
-| click           | Triggered when click NoticeBar | _event: Event_ |
-| close           | Triggered when closed          | _event: Event_ |
-| replay `v2.6.2` | Triggered when replay          | -              |
+| Event           | Description                        | Arguments      |
+| --------------- | ---------------------------------- | -------------- |
+| click           | Emitted when NoticeBar is clicked  | _event: Event_ |
+| close           | Emitted when NoticeBar is closed   | _event: Event_ |
+| replay `v2.6.2` | Emitted when NoticeBar is replayed | -              |
 
 ### Slots
 
@@ -114,3 +108,19 @@ app.use(NoticeBar);
 | default    | Notice text content |
 | left-icon  | Custom left icon    |
 | right-icon | Custom right icon   |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                         | Default Value             | Description |
+| ---------------------------- | ------------------------- | ----------- |
+| @notice-bar-height           | `40px`                    | -           |
+| @notice-bar-padding          | `0 @padding-md`           | -           |
+| @notice-bar-wrapable-padding | `@padding-xs @padding-md` | -           |
+| @notice-bar-text-color       | `@orange-dark`            | -           |
+| @notice-bar-font-size        | `@font-size-md`           | -           |
+| @notice-bar-line-height      | `24px`                    | -           |
+| @notice-bar-background-color | `@orange-light`           | -           |
+| @notice-bar-icon-size        | `16px`                    | -           |
+| @notice-bar-icon-min-width   | `24px`                    | -           |

@@ -10,6 +10,68 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.11.1](https://github.com/youzan/vant/compare/v2.11.0...v2.11.1)
+
+`2020-11-26`
+
+**Feature**
+
+- CheckboxGroup: toggleAll 方法新增 skipDisabled 选项，用于跳过禁用的复选框 [#7644](https://github.com/youzan/vant/issues/7644)
+- DatetimePicker: 支持 Picker 的所有插槽 [#7645](https://github.com/youzan/vant/issues/7645)
+- Popover: 新增 trigger 属性，用于控制弹出层的触发时机 [#7646](https://github.com/youzan/vant/issues/7646)
+- Popover: 优化无障碍访问 [#7624](https://github.com/youzan/vant/issues/7624)
+- ShareSheet: 新增小程序码图标 [#7635](https://github.com/youzan/vant/issues/7635)
+
+**style**
+
+- NavBar: 修复当 border 为 false 时 z-index 不生效的问题 [#7612](https://github.com/youzan/vant/issues/7612)
+- Popover: 优化 cursor 样式 [#7623](https://github.com/youzan/vant/issues/7623)
+
+**Bug Fixes**
+
+- Button: 修复图标按钮和图标按钮无法垂直对齐的问题 [#7636](https://github.com/youzan/vant/issues/7636)
+- Popover: 修复在 nuxt.js 上编译报错的问题 [f3ad7e](https://github.com/youzan/vant/commit/f3ad7ed1a77cd2f19001489ea64df0d61429ce33)
+
+### [v2.11.0](https://github.com/youzan/vant/compare/v2.10.14...v2.11.0)
+
+`2020-11-22`
+
+**New Component**
+
+- 新增 [Badge 徽标](#/zh-CN/badge)组件 [#7602](https://github.com/youzan/vant/issues/7602)
+- 新增 [Popover 气泡弹出框](#/zh-CN/popover)组件 [#7579](https://github.com/youzan/vant/issues/7579)
+
+![](https://img.yzcdn.cn/vant/component-preview-1122.png)
+
+**Feature**
+
+- Popup: 新增 click-close-icon 事件 [#7599](https://github.com/youzan/vant/issues/7599)
+
+**Bug Fixes**
+
+- ActionSheet: 修复在 iOS 10 以下版本时选项高度不正确的问题 [#7578](https://github.com/youzan/vant/issues/7578)
+
+### [v2.10.14](https://github.com/youzan/vant/compare/v2.10.13...v2.10.14)
+
+`2020-11-15`
+
+**Feature**
+
+- ImagePreview: index 插槽新增 index 参数 [#7552](https://github.com/youzan/vant/issues/7552)
+- Popup: 新增 transition-appear 属性 [#7525](https://github.com/youzan/vant/issues/7525)
+- Skeleton: 新增 @skeleton-avatar-size less 变量 [#7556](https://github.com/youzan/vant/issues/7556)
+- Skeleton: 新增 @skeleton-title-width less 变量 [#7557](https://github.com/youzan/vant/issues/7557)
+
+**Bug Fixes**
+
+- Calendar: 修复 month-show 事件触发时机不正确的问题 [#7565](https://github.com/youzan/vant/issues/7565)
+- Calendar: 修复初始化时 lazy-render 不生效的问题 [#7564](https://github.com/youzan/vant/issues/7564)
+- IndexBar: 修复在 Popup 内使用时锚点无法吸顶的问题 [#7559](https://github.com/youzan/vant/issues/7559)
+- NavBar: 修复 safe-area-inset-top 属性未能正确生效的问题 [#7534](https://github.com/youzan/vant/issues/7534)
+- Skeleton: 修复 avatar-size 属性传入 number 类型时报错的问题 [#7555](https://github.com/youzan/vant/issues/7555)
+- Sticky: 修复某些情况下无法正确吸顶的问题 [#7561](https://github.com/youzan/vant/issues/7561)
+- Swipe: 修复宽度为小数时漏边的问题 [#7562](https://github.com/youzan/vant/issues/7562)
+
 ### [v2.10.13](https://github.com/youzan/vant/compare/v2.10.12...v2.10.13)
 
 `2020-11-08`

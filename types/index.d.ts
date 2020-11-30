@@ -20,6 +20,7 @@ import { Locale } from './locale';
 import { Notify } from './notify';
 import { Picker } from './picker';
 import { Progress } from './progress';
+import { Search } from './search';
 import { Sku } from './sku';
 import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
@@ -33,6 +34,7 @@ export const install: (app: App) => any;
 
 export class ActionSheet extends VanComponent {}
 export class AddressList extends VanComponent {}
+export class Badge extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
@@ -66,13 +68,13 @@ export class Overlay extends VanComponent {}
 export class Pagination extends VanComponent {}
 export class Panel extends VanComponent {}
 export class PasswordInput extends VanComponent {}
+export class Popover extends VanComponent {}
 export class Popup extends VanComponent {}
 export class PullRefresh extends VanComponent {}
 export class Radio extends VanComponent {}
 export class RadioGroup extends VanComponent {}
 export class Rate extends VanComponent {}
 export class Row extends VanComponent {}
-export class Search extends VanComponent {}
 export class ShareSheet extends VanComponent {}
 export class Sidebar extends VanComponent {}
 export class SidebarItem extends VanComponent {}
@@ -112,6 +114,7 @@ export {
   Notify,
   Picker,
   Progress,
+  Search,
   Sku,
   Swipe,
   SwipeCell,

@@ -30,11 +30,14 @@ function getRoutes() {
     routes.push({
       name: 'NotFound',
       path: '/:path(.*)+',
-      redirect: (route) => `/${getLangFromRoute(route)}/`,
+      redirect: (route) => ({
+        name: getLangFromRoute(route),
+      }),
     });
 
     langs.forEach((lang) => {
       routes.push({
+        name: lang,
         path: `/${lang}`,
         component: DemoHome,
         meta: { lang },
@@ -44,10 +47,13 @@ function getRoutes() {
     routes.push({
       name: 'NotFound',
       path: '/:path(.*)+',
-      redirect: () => '/',
+      redirect: {
+        name: 'home',
+      },
     });
 
     routes.push({
+      name: 'home',
       path: '/',
       component: DemoHome,
     });
@@ -70,7 +76,7 @@ function getRoutes() {
       });
     } else {
       routes.push({
-        name,
+        name: component,
         path: `/${component}`,
         component: demos[name],
         meta: {

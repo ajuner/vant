@@ -14,7 +14,7 @@
 
   <demo-block :title="t('customShape')">
     <van-checkbox v-model="checkboxShape" shape="square">
-      {{ t('customColor') }}
+      {{ t('customShape') }}
     </van-checkbox>
   </demo-block>
 
@@ -105,7 +105,7 @@
 
 <script>
 import { ref } from 'vue';
-import { useRefs } from '../../composition/use-refs';
+import { useRefs } from '../../composables/use-refs';
 
 export default {
   i18n: {

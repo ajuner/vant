@@ -219,7 +219,7 @@ export default {
 ### Tabs Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model:active | Index of active tab | _number \| string_ | `0` |
 | type | Can be set to `line` `card` | _string_ | `line` |
 | color | Tab color | _string_ | `#ee0a24` |
@@ -258,11 +258,11 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when click tab | name，title |
-| change | Triggered when active tab changed | name，title |
-| disabled | Triggered when click disabled tab | name，title |
-| rendered `v2.3.0` | Triggered when content first rendered in lazy-render mode | name，title |
-| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |
+| click | Emitted when a tab is clicked | name，title |
+| change | Emitted when active tab changed | name，title |
+| disabled | Emitted when a disabled tab is clicked | name，title |
+| rendered `v2.3.0` | Emitted when content first rendered in lazy-render mode | name，title |
+| scroll | Emitted when tab scrolling in sticky mode | object: { scrollTop, isFixed } |
 
 ### Tabs Methods
 
@@ -286,3 +286,22 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 | ------- | ---------------- |
 | default | Content of tab   |
 | title   | Custom tab title |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                       | Default Value         | Description |
+| -------------------------- | --------------------- | ----------- |
+| @tab-text-color            | `@gray-7`             | -           |
+| @tab-active-text-color     | `@text-color`         | -           |
+| @tab-disabled-text-color   | `@gray-5`             | -           |
+| @tab-font-size             | `@font-size-md`       | -           |
+| @tab-line-height           | `@line-height-md`     | -           |
+| @tabs-default-color        | `@red`                | -           |
+| @tabs-line-height          | `44px`                | -           |
+| @tabs-card-height          | `30px`                | -           |
+| @tabs-nav-background-color | `@white`              | -           |
+| @tabs-bottom-bar-width     | `40px`                | -           |
+| @tabs-bottom-bar-height    | `3px`                 | -           |
+| @tabs-bottom-bar-color     | `@tabs-default-color` | -           |

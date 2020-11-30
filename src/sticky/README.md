@@ -63,6 +63,14 @@ export default {
 
 ### Events
 
-| Event  | Description           | Arguments                      |
-| ------ | --------------------- | ------------------------------ |
-| scroll | Triggered when scroll | object: { scrollTop, isFixed } |
+| Event  | Description            | Arguments                      |
+| ------ | ---------------------- | ------------------------------ |
+| scroll | Emitted when scrolling | object: { scrollTop, isFixed } |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name            | Default Value | Description |
+| --------------- | ------------- | ----------- |
+| @sticky-z-index | `99`          | -           |

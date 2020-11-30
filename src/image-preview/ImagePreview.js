@@ -6,7 +6,7 @@ import { callInterceptor } from '../utils/interceptor';
 
 // Composition
 import { useWindowSize } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Icon from '../icon';
@@ -113,7 +113,7 @@ export default createComponent({
         return (
           <div class={bem('index')}>
             {slots.index
-              ? slots.index()
+              ? slots.index({ index: state.active })
               : `${state.active + 1} / ${props.images.length}`}
           </div>
         );
@@ -193,7 +193,7 @@ export default createComponent({
           setActive(+startPosition);
           nextTick(() => {
             resize();
-            swipeRef.value.swipeTo(+startPosition, { immediate: true });
+            swipeTo(+startPosition, { immediate: true });
           });
         } else {
           emit('close', {

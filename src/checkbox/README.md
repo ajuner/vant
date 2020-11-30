@@ -225,7 +225,7 @@ export default {
 ### Checkbox Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model (value) | Check status | _boolean_ | `false` |
 | name | Checkbox name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
@@ -239,7 +239,7 @@ export default {
 ### CheckboxGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model (value) | Names of all checked checkboxes | _any[]_ | - |
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
@@ -249,16 +249,16 @@ export default {
 
 ### Checkbox Events
 
-| Event  | Description                   | Parameters         |
-| ------ | ----------------------------- | ------------------ |
-| change | Triggered when value changed  | _checked: boolean_ |
-| click  | Triggered when click checkbox | _event: Event_     |
+| Event  | Description                          | Parameters         |
+| ------ | ------------------------------------ | ------------------ |
+| change | Emitted when value changed           | _checked: boolean_ |
+| click  | Emitted when the checkbox is clicked | _event: Event_     |
 
 ### CheckboxGroup Events
 
-| Event  | Description                  | Parameters     |
-| ------ | ---------------------------- | -------------- |
-| change | Triggered when value changed | _names: any[]_ |
+| Event  | Description                | Parameters     |
+| ------ | -------------------------- | -------------- |
+| change | Emitted when value changed | _names: any[]_ |
 
 ### Checkbox Slots
 
@@ -273,7 +273,30 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Checkb
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| toggleAll | Toggle check status of all checkboxes | _checked?: boolean_ | - |
+| toggleAll | Toggle check status of all checkboxes | _options?: boolean \| object_ | - |
+
+### toggleAll Usage
+
+```js
+const { checkboxGroup } = this.$refs;
+
+// Toggle all
+checkboxGroup.toggleAll();
+// Select all
+checkboxGroup.toggleAll(true);
+// Unselect all
+checkboxGroup.toggleAll(false);
+
+// Toggle all, skip disabled
+checkboxGroup.toggleAll({
+  skipDisabled: true,
+});
+// Select all, skip disabled
+checkboxGroup.toggleAll({
+  checked: true,
+  skipDisabled: true,
+});
+```
 
 ### Checkbox Methods
 
@@ -282,3 +305,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Checkb
 | Name   | Description         | Attribute           | Return value |
 | ------ | ------------------- | ------------------- | ------------ |
 | toggle | Toggle check status | _checked?: boolean_ | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @checkbox-size | `20px` | - |
+| @checkbox-border-color | `@gray-5` | - |
+| @checkbox-transition-duration | `@animation-duration-fast` | - |
+| @checkbox-label-margin | `@padding-xs` | - |
+| @checkbox-label-color | `@text-color` | - |
+| @checkbox-checked-icon-color | `@blue` | - |
+| @checkbox-disabled-icon-color | `@gray-5` | - |
+| @checkbox-disabled-label-color | `@gray-5` | - |
+| @checkbox-disabled-background-color | `@border-color` | - |

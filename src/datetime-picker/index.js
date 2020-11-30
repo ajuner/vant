@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { pick, createNamespace } from '../utils';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
 
@@ -15,7 +15,7 @@ export default createComponent({
     ...DatePicker.props,
   },
 
-  setup(props, { attrs }) {
+  setup(props, { attrs, slots }) {
     const root = ref();
 
     useExpose({
@@ -32,6 +32,7 @@ export default createComponent({
 
       return (
         <Component
+          v-slots={slots}
           ref={root}
           class={bem()}
           {...{ ...inheritProps, ...attrs }}

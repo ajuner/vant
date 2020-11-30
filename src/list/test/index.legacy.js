@@ -21,7 +21,7 @@ test('load event', async () => {
 
 test('error loaded, click error-text and reload', async () => {
   const wrapper = mount(List, {
-    propsData: {
+    props: {
       errorText: 'Request failed. Click to reload...',
       error: true,
     },
@@ -52,7 +52,7 @@ test('error loaded, click error-text and reload', async () => {
 
 test('finished', async () => {
   const wrapper = mount(List, {
-    propsData: {
+    props: {
       finished: true,
       finishedText: 'Finished',
     },
@@ -72,10 +72,10 @@ test('finished', async () => {
 
 test('finished slot', async () => {
   const wrapper = mount(List, {
-    propsData: {
+    props: {
       finished: true,
     },
-    scopedSlots: {
+    slots: {
       finished: () => 'Custom Finished',
     },
   });
@@ -85,10 +85,10 @@ test('finished slot', async () => {
 
 test('error slot', async () => {
   const wrapper = mount(List, {
-    propsData: {
+    props: {
       error: true,
     },
-    scopedSlots: {
+    slots: {
       error: () => 'Custom Error',
     },
   });
@@ -98,7 +98,7 @@ test('error slot', async () => {
 
 test('immediate check false', async () => {
   const wrapper = mount(List, {
-    propsData: {
+    props: {
       immediateCheck: false,
     },
   });
@@ -139,7 +139,7 @@ test('check the direction props', () => {
     slots: {
       default: '<div class="list-item">list item</div>',
     },
-    propsData: {
+    props: {
       direction: 'up',
     },
   });

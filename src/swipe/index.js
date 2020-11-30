@@ -19,8 +19,8 @@ import {
   usePageVisibility,
   onMountedOrActivated,
 } from '@vant/use';
-import { useTouch } from '../composition/use-touch';
-import { useExpose } from '../composition/use-expose';
+import { useTouch } from '../composables/use-touch';
+import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe');
 
@@ -136,7 +136,7 @@ export default createComponent({
         currentPosition = Math.min(currentPosition, -minOffset.value);
       }
 
-      let targetOffset = Math.round(offset - currentPosition);
+      let targetOffset = offset - currentPosition;
       if (!props.loop) {
         targetOffset = range(targetOffset, minOffset.value, 0);
       }
@@ -242,8 +242,8 @@ export default createComponent({
       state.rect = rect;
       state.swiping = true;
       state.active = active;
-      state.width = Math.floor(+props.width || rect.width);
-      state.height = Math.floor(+props.height || rect.height);
+      state.width = +props.width || rect.width;
+      state.height = +props.height || rect.height;
       state.offset = getTargetOffset(active);
       children.forEach((swipe) => {
         swipe.setOffset(0);

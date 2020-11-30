@@ -6,7 +6,7 @@ import { pick, padZero, createNamespace } from '../utils';
 import { times, sharedProps, getTrueValue, getMonthEndDay } from './utils';
 
 // Composition
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Picker from '../picker';
@@ -36,7 +36,7 @@ export default createComponent({
 
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const formatValue = (value) => {
       if (!isDate(value)) {
         value = props.minDate;
@@ -299,6 +299,7 @@ export default createComponent({
 
     return () => (
       <Picker
+        v-slots={slots}
         ref={picker}
         columns={columns.value}
         readonly={props.readonly}

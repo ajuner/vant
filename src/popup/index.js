@@ -14,8 +14,9 @@ import { createNamespace, isDef } from '../utils';
 
 // Composition
 import { useEventListener } from '@vant/use';
-import { useLockScroll } from '../composition/use-lock-scroll';
-import { useLazyRender } from '../composition/use-lazy-render';
+import { useExpose } from '../composables/use-expose';
+import { useLockScroll } from '../composables/use-lock-scroll';
+import { useLazyRender } from '../composables/use-lazy-render';
 
 // Components
 import Icon from '../icon';
@@ -45,6 +46,8 @@ export const popupSharedProps = {
   overlayStyle: Object,
   // overlay custom class name
   overlayClass: String,
+  // Initial rendering animation
+  transitionAppear: Boolean,
   // whether to show overlay
   overlay: {
     type: Boolean,
@@ -60,7 +63,7 @@ export const popupSharedProps = {
     type: Boolean,
     default: true,
   },
-  // whether to close popup when click overlay
+  // whether to close popup when overlay is clicked
   closeOnClickOverlay: {
     type: Boolean,
     default: true,
@@ -99,6 +102,7 @@ export default createComponent({
     'closed',
     'update:show',
     'click-overlay',
+    'click-close-icon',
   ],
 
   setup(props, { emit, attrs, slots }) {
@@ -106,6 +110,7 @@ export default createComponent({
     let shouldReopen;
 
     const zIndex = ref();
+    const popupRef = ref();
 
     const [lockScroll, unlockScroll] = useLockScroll(() => props.lockScroll);
 
@@ -169,6 +174,11 @@ export default createComponent({
       }
     };
 
+    const onClickCloseIcon = (event) => {
+      emit('click-close-icon', event);
+      close();
+    };
+
     const renderCloseIcon = () => {
       if (props.closeable) {
         return (
@@ -177,7 +187,7 @@ export default createComponent({
             tabindex="0"
             name={props.closeIcon}
             class={bem('close-icon', props.closeIconPosition)}
-            onClick={close}
+            onClick={onClickCloseIcon}
           />
         );
       }
@@ -192,6 +202,7 @@ export default createComponent({
       return (
         <div
           v-show={props.show}
+          ref={popupRef}
           style={style.value}
           class={bem({
             round,
@@ -208,13 +219,14 @@ export default createComponent({
     });
 
     const renderTransition = () => {
-      const { position, transition } = props;
+      const { position, transition, transitionAppear } = props;
       const name =
         position === 'center' ? 'van-fade' : `van-popup-slide-${position}`;
 
       return (
         <Transition
           name={transition || name}
+          appear={transitionAppear}
           onAfterEnter={onOpened}
           onAfterLeave={onClosed}
         >
@@ -235,6 +247,8 @@ export default createComponent({
         }
       }
     );
+
+    useExpose({ popupRef });
 
     useEventListener('popstate', () => {
       if (props.closeOnPopstate) {

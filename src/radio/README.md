@@ -151,7 +151,7 @@ export default {
 ### Radio Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | name | Radio name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Whether to disable radio | _boolean_ | `false` |
@@ -163,7 +163,7 @@ export default {
 ### RadioGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model (v-model) | Name of checked radio | _any_ | - |
 | disabled | Disable all radios | _boolean_ | `false` |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
@@ -172,15 +172,15 @@ export default {
 
 ### Radio Events
 
-| Event | Description                | Parameters     |
-| ----- | -------------------------- | -------------- |
-| click | Triggered when click radio | _event: Event_ |
+| Event | Description                   | Parameters     |
+| ----- | ----------------------------- | -------------- |
+| click | Emitted when radio is clicked | _event: Event_ |
 
 ### RadioGroup Events
 
-| Event  | Description                  | Parameters     |
-| ------ | ---------------------------- | -------------- |
-| change | Triggered when value changed | _name: string_ |
+| Event  | Description                | Parameters     |
+| ------ | -------------------------- | -------------- |
+| change | Emitted when value changed | _name: string_ |
 
 ### Radio Slots
 
@@ -188,3 +188,19 @@ export default {
 | ------- | ------------ | ------------------ |
 | default | Custom label | -                  |
 | icon    | Custom icon  | _checked: boolean_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value              | Description |
+| -------------------------------- | -------------------------- | ----------- |
+| @radio-size                      | `20px`                     | -           |
+| @radio-border-color              | `@gray-5`                  | -           |
+| @radio-transition-duration       | `@animation-duration-fast` | -           |
+| @radio-label-margin              | `@padding-xs`              | -           |
+| @radio-label-color               | `@text-color`              | -           |
+| @radio-checked-icon-color        | `@blue`                    | -           |
+| @radio-disabled-icon-color       | `@gray-5`                  | -           |
+| @radio-disabled-label-color      | `@gray-5`                  | -           |
+| @radio-disabled-background-color | `@border-color`            | -           |

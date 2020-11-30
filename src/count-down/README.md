@@ -136,8 +136,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| finish | Triggered when count down finished | - |
-| change `v2.4.4` | Triggered when count down changed | _currentTime: CurrentTime_ |
+| finish | Emitted when count down finished | - |
+| change `v2.4.4` | Emitted when count down changed | _currentTime: CurrentTime_ |
 
 ### Slots
 
@@ -165,3 +165,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CountD
 | start | Start count down | -         | -            |
 | pause | Pause count down | -         | -            |
 | reset | Reset count down | -         | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                    | Default Value     | Description |
+| ----------------------- | ----------------- | ----------- |
+| @count-down-text-color  | `@text-color`     | -           |
+| @count-down-font-size   | `@font-size-md`   | -           |
+| @count-down-line-height | `@line-height-md` | -           |

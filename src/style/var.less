@@ -523,11 +523,6 @@
 @pagination-desc-color: @gray-7;
 @pagination-disabled-opacity: @disabled-opacity;
 
-// Panel
-@panel-background-color: @white;
-@panel-header-value-color: @red;
-@panel-footer-padding: @padding-xs @padding-md;
-
 // PasswordInput
 @password-input-height: 50px;
 @password-input-margin: 0 @padding-md;
@@ -554,6 +549,21 @@
 @picker-option-disabled-opacity: 0.3;
 @picker-loading-icon-color: @blue;
 @picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+
+// Popover
+@popover-arrow-size: 6px;
+@popover-border-radius: @border-radius-lg;
+@popover-action-width: 128px;
+@popover-action-height: 44px;
+@popover-action-font-size: @font-size-md;
+@popover-action-line-height: @line-height-md;
+@popover-action-icon-size: 20px;
+@popover-light-text-color: @text-color;
+@popover-light-background-color: @white;
+@popover-light-action-disabled-text-color: @gray-5;
+@popover-dark-text-color: @white;
+@popover-dark-background-color: #4a4a4a;
+@popover-dark-action-disabled-text-color: @gray-6;
 
 // Popup
 @popup-background-color: @white;
@@ -648,6 +658,8 @@
 @skeleton-row-height: 16px;
 @skeleton-row-background-color: @active-color;
 @skeleton-row-margin-top: @padding-sm;
+@skeleton-title-width: 40%;
+@skeleton-avatar-size: 32px;
 @skeleton-avatar-background-color: @active-color;
 @skeleton-animation-duration: 1.2s;
 
@@ -739,12 +751,6 @@
 @switch-transition-duration: @animation-duration-base;
 @switch-disabled-opacity: @disabled-opacity;
 @switch-border: @border-width-base solid rgba(0, 0, 0, 0.1);
-
-// SwitchCell
-@switch-cell-padding-top: @cell-vertical-padding - 1px;
-@switch-cell-padding-bottom: @cell-vertical-padding - 1px;
-@switch-cell-large-padding-top: @cell-large-vertical-padding - 1px;
-@switch-cell-large-padding-bottom: @cell-large-vertical-padding - 1px;
 
 // Tabbar
 @tabbar-height: 50px;
@@ -846,8 +852,3 @@
 @uploader-loading-icon-size: 22px;
 @uploader-loading-icon-color: @white;
 @uploader-disabled-opacity: @disabled-opacity;
-
-// Sku
-@sku-item-background-color: @background-color;
-@sku-icon-gray-color: @gray-4;
-@sku-upload-mask-color: rgba(50, 50, 51, 0.8);

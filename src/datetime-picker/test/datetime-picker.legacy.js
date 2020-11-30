@@ -21,7 +21,7 @@ test('confirm & cancel event', () => {
 
 test('time type', () => {
   const wrapper = mount(DatetimePicker, {
-    propsData: {
+    props: {
       type: 'time',
       minHour: 22,
       minMinute: 58,
@@ -34,4 +34,17 @@ test('time type', () => {
 test('getPicker method', () => {
   const wrapper = mount(DatetimePicker);
   expect(wrapper.vm.getPicker()).toBeTruthy();
+});
+
+test('should render title slot correctly', () => {
+  const wrapper = mount(DatetimePicker, {
+    propsData: {
+      showToolbar: true,
+    },
+    scopedSlots: {
+      title: () => 'Custom title',
+    },
+  });
+
+  expect(wrapper.find('.van-picker__toolbar')).toMatchSnapshot();
 });

@@ -287,11 +287,23 @@ Following props are supported when the type is time
 
 ### Events
 
-| Event   | Description                         | Arguments            |
-| ------- | ----------------------------------- | -------------------- |
-| change  | Triggered when value changed        | value: current value |
-| confirm | Triggered when click confirm button | value: current value |
-| cancel  | Triggered when click cancel button  | -                    |
+| Event   | Description                                | Arguments            |
+| ------- | ------------------------------------------ | -------------------- |
+| change  | Emitted when value changed                 | value: current value |
+| confirm | Emitted when the confirm button is clicked | value: current value |
+| cancel  | Emitted when the cancel button is clicked  | -                    |
+
+### Slots
+
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| default `v2.11.1` | Custom toolbar content | - |
+| title `v2.11.1` | Custom title | - |
+| confirm `v2.11.1` | Custom confirm button text | - |
+| cancel `v2.11.1` | Custom cancel button text | - |
+| option `v2.11.1` | Custom option content | _option: string \| object_ |
+| columns-top `v2.11.1` | Custom content above columns | - |
+| columns-bottom `v2.11.1` | Custom content below columns | - |
 
 ### Methods
 

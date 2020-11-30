@@ -261,9 +261,9 @@ Picker events will pass different parameters according to the columns are single
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Triggered when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
-| cancel | Triggered when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
-| change | Triggered when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
+| confirm | Emitted when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
+| cancel | Emitted when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
+| change | Emitted when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
 
 ### Slots
 
@@ -303,3 +303,23 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker
 | getColumnValues | Get columns data of the column | columnIndex | values |
 | setColumnValues | Set columns data of the column | columnIndex, values | - |
 | confirm `v2.4.0` | Stop scrolling and emit confirm event | - | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                            | Default Value              | Description |
+| ------------------------------- | -------------------------- | ----------- |
+| @picker-background-color        | `@white`                   | -           |
+| @picker-toolbar-height          | `44px`                     | -           |
+| @picker-title-font-size         | `@font-size-lg`            | -           |
+| @picker-title-line-height       | `@line-height-md`          | -           |
+| @picker-action-padding          | `0 @padding-md`            | -           |
+| @picker-action-font-size        | `@font-size-md`            | -           |
+| @picker-confirm-action-color    | `@text-link-color`         | -           |
+| @picker-cancel-action-color     | `@gray-6`                  | -           |
+| @picker-option-font-size        | `@font-size-lg`            | -           |
+| @picker-option-text-color       | `@black`                   | -           |
+| @picker-option-disabled-opacity | `0.3`                      | -           |
+| @picker-loading-icon-color      | `@blue`                    | -           |
+| @picker-loading-mask-color      | `rgba(255, 255, 255, 0.9)` | -           |

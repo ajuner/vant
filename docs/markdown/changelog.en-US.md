@@ -10,6 +10,66 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.11.1](https://github.com/youzan/vant/compare/v2.11.0...v2.11.1)
+
+`2020-11-26`
+
+**Feature**
+
+- CheckboxGroup: toggleAll support skipDisabled option [#7644](https://github.com/youzan/vant/issues/7644)
+- DatetimePicker: support picker slots [#7645](https://github.com/youzan/vant/issues/7645)
+- Popover: add trigger prop [#7646](https://github.com/youzan/vant/issues/7646)
+- Popover: improve a11y [#7624](https://github.com/youzan/vant/issues/7624)
+- ShareSheet: support weapp-qrcode icon [#7635](https://github.com/youzan/vant/issues/7635)
+
+**style**
+
+- NavBar: z-index not work when border is hidden [#7612](https://github.com/youzan/vant/issues/7612)
+- Popover: improve cursor [#7623](https://github.com/youzan/vant/issues/7623)
+
+**Bug Fixes**
+
+- Button: icon button vertical align [#7636](https://github.com/youzan/vant/issues/7636)
+- Popover: failed to compile in legacy nuxt.js [f3ad7e](https://github.com/youzan/vant/commit/f3ad7ed1a77cd2f19001489ea64df0d61429ce33)
+
+### [v2.11.0](https://github.com/youzan/vant/compare/v2.10.14...v2.11.0)
+
+`2020-11-22`
+
+**New Component**
+
+- add [Badge](#/en-US/badge) component [#7602](https://github.com/youzan/vant/issues/7602)
+- add [Popover](#/en-US/popover) component [#7579](https://github.com/youzan/vant/issues/7579)
+
+**Feature**
+
+- Popup: add click-close-icon event [#7599](https://github.com/youzan/vant/issues/7599)
+
+**Bug Fixes**
+
+- ActionSheet: The height of the flex container is lost under iOS 10 [#7578](https://github.com/youzan/vant/issues/7578)
+
+### [v2.10.14](https://github.com/youzan/vant/compare/v2.10.13...v2.10.14)
+
+`2020-11-15`
+
+**Feature**
+
+- ImagePreview: passing current index to index slot [#7552](https://github.com/youzan/vant/issues/7552)
+- Popup: add transition-appear prop [#7525](https://github.com/youzan/vant/issues/7525)
+- Skeleton: add @skeleton-avatar-size less var [#7556](https://github.com/youzan/vant/issues/7556)
+- Skeleton: add @skeleton-title-width less var [#7557](https://github.com/youzan/vant/issues/7557)
+
+**Bug Fixes**
+
+- Calendar: month-show event triggered multiple times [#7565](https://github.com/youzan/vant/issues/7565)
+- Calendar: should not render all months on mounted [#7564](https://github.com/youzan/vant/issues/7564)
+- IndexBar: incorrect behavior inside popup [#7559](https://github.com/youzan/vant/issues/7559)
+- NavBar: safe-area-inset-top css incorrect [#7534](https://github.com/youzan/vant/issues/7534)
+- Skeleton: avatar-size can be number type [#7555](https://github.com/youzan/vant/issues/7555)
+- Sticky: not work in some cases [#7561](https://github.com/youzan/vant/issues/7561)
+- Swipe: leak when width has decimal [#7562](https://github.com/youzan/vant/issues/7562)
+
 ### [v2.10.13](https://github.com/youzan/vant/compare/v2.10.12...v2.10.13)
 
 `2020-11-08`

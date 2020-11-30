@@ -3,7 +3,7 @@ import { mount, later, trigger, triggerDrag } from '../../../test';
 
 test('change head content when pulling down', async () => {
   const wrapper = mount(PullRefresh, {
-    propsData: {
+    props: {
       value: false,
     },
     listeners: {
@@ -45,7 +45,7 @@ test('change head content when pulling down', async () => {
 
 test('custom content by slots', async () => {
   const wrapper = mount(PullRefresh, {
-    scopedSlots: {
+    slots: {
       pulling({ distance }) {
         return `pulling ${distance}`;
       },
@@ -77,7 +77,7 @@ test('custom content by slots', async () => {
 
 test('pull a short distance', () => {
   const wrapper = mount(PullRefresh, {
-    propsData: {
+    props: {
       value: false,
     },
   });
@@ -89,7 +89,7 @@ test('pull a short distance', () => {
 
 test('not in page top', () => {
   const wrapper = mount(PullRefresh, {
-    propsData: {
+    props: {
       value: false,
     },
   });
@@ -107,7 +107,7 @@ test('not in page top', () => {
 
 test('render success text', async () => {
   const wrapper = mount(PullRefresh, {
-    propsData: {
+    props: {
       successText: 'success',
       successDuration: 0,
     },
@@ -137,7 +137,7 @@ test('render success text', async () => {
 
 test('render success slot', async () => {
   const wrapper = mount(PullRefresh, {
-    scopedSlots: {
+    slots: {
       success: () => 'Custom Success',
     },
     listeners: {
@@ -159,7 +159,7 @@ test('render success slot', async () => {
 
 test('should set height when using head-height', async () => {
   const wrapper = mount(PullRefresh, {
-    propsData: {
+    props: {
       headHeight: 100,
     },
   });

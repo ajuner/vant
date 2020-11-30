@@ -157,6 +157,15 @@ export default {
 | clear  | 点击清除按钮后触发   | _event: Event_                 |
 | cancel | 点击取消按钮时触发   | -                              |
 
+### 方法
+
+通过 ref 可以获取到 Search 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明           | 参数 | 返回值 |
+| ------ | -------------- | ---- | ------ |
+| focus  | 获取输入框焦点 | -    | -      |
+| blur   | 取消输入框焦点 | -    | -      |
+
 ### Slots
 
 | 名称       | 说明                                                    |
@@ -166,6 +175,24 @@ export default {
 | label      | 自定义左侧文本（搜索框内）                              |
 | left-icon  | 自定义左侧图标（搜索框内）                              |
 | right-icon | 自定义右侧图标（搜索框内）                              |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值             | 描述 |
+| -------------------------------- | ------------------ | ---- |
+| @search-padding                  | `10px @padding-sm` | -    |
+| @search-background-color         | `@white`           | -    |
+| @search-content-background-color | `@gray-1`          | -    |
+| @search-input-height             | `34px`             | -    |
+| @search-label-padding            | `0 5px`            | -    |
+| @search-label-color              | `@text-color`      | -    |
+| @search-label-font-size          | `@font-size-md`    | -    |
+| @search-left-icon-color          | `@gray-6`          | -    |
+| @search-action-padding           | `0 @padding-xs`    | -    |
+| @search-action-text-color        | `@text-color`      | -    |
+| @search-action-font-size         | `@font-size-md`    | -    |
 
 ## 常见问题
 
