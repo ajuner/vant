@@ -28,11 +28,11 @@
 
       <demo-block :title="t('color')">
         <van-row>
-          <van-col span="6" @click="copy(demoIcon, { color: BLUE })">
-            <van-icon :name="demoIcon" :color="BLUE" />
+          <van-col span="6" @click="copy(demoIcon, { color: '#1989fa' })">
+            <van-icon name="cart-o" color="#1989fa" />
           </van-col>
-          <van-col span="6" @click="copy(demoIcon, { color: GREEN })">
-            <van-icon :name="demoIcon" :color="GREEN" />
+          <van-col span="6" @click="copy(demoIcon, { color: RED })">
+            <van-icon name="fire-o" :color="RED" />
           </van-col>
         </van-row>
       </demo-block>
@@ -95,7 +95,10 @@
 
 <script>
 import icons from '@vant/icons';
-import { BLUE, GREEN } from '../../utils/constant';
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { RED } from '../../utils/constant';
+import Notify from '../../notify';
 
 // from https://30secondsofcode.org
 function copyToClipboard(str) {
@@ -121,45 +124,37 @@ function copyToClipboard(str) {
   }
 }
 
+const i18n = {
+  'zh-CN': {
+    title: '图标列表',
+    badge: '徽标提示',
+    basic: '基础图标',
+    copied: '复制成功',
+    outline: '线框风格',
+    filled: '实底风格',
+    demo: '用法示例',
+    color: '图标颜色',
+    size: '图标大小',
+  },
+  'en-US': {
+    title: 'Icon List',
+    badge: 'Show Badge',
+    basic: 'Basic',
+    copied: 'Copied',
+    outline: 'Outline',
+    filled: 'Filled',
+    demo: 'Demo',
+    color: 'Icon Color',
+    size: 'Icon Size',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      title: '图标列表',
-      badge: '徽标提示',
-      basic: '基础图标',
-      copied: '复制成功',
-      outline: '线框风格',
-      filled: '实底风格',
-      demo: '用法示例',
-      color: '图标颜色',
-      size: '图标大小',
-    },
-    'en-US': {
-      title: 'Icon List',
-      badge: 'Show Badge',
-      basic: 'Basic',
-      copied: 'Copied',
-      outline: 'Outline',
-      filled: 'Filled',
-      demo: 'Demo',
-      color: 'Icon Color',
-      size: 'Icon Size',
-    },
-  },
+  setup() {
+    const t = useTranslate(i18n);
+    const tab = ref(0);
 
-  data() {
-    this.BLUE = BLUE;
-    this.GREEN = GREEN;
-    this.icons = icons;
-    return {
-      tab: 0,
-      demoIcon: 'chat-o',
-      demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png',
-    };
-  },
-
-  methods: {
-    copy(icon, option = {}) {
+    const copy = (icon, option = {}) => {
       let tag = `<van-icon name="${icon}"`;
       if ('dot' in option) {
         tag = `${tag} ${option.dot ? 'dot' : ''}`;
@@ -176,13 +171,23 @@ export default {
       tag = `${tag} />`;
       copyToClipboard(tag);
 
-      this.$notify({
+      Notify({
         type: 'success',
         duration: 1500,
         className: 'demo-icon-notify',
-        message: `${this.t('copied')}：${tag}`,
+        message: `${t('copied')}：${tag}`,
       });
-    },
+    };
+
+    return {
+      t,
+      tab,
+      RED,
+      copy,
+      icons,
+      demoIcon: 'chat-o',
+      demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png',
+    };
   },
 };
 </script>

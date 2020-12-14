@@ -1,42 +1,48 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-contact-edit
-        is-edit
-        show-set-default
-        :contact-info="editingContact"
-        :set-default-label="t('defaultLabel')"
-        @save="onSave"
-        @delete="onDelete"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('basicUsage')">
+    <van-contact-edit
+      is-edit
+      show-set-default
+      :contact-info="editingContact"
+      :set-default-label="t('defaultLabel')"
+      @save="onSave"
+      @delete="onDelete"
+    />
+  </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    defaultLabel: '设为默认联系人',
+  },
+  'en-US': {
+    defaultLabel: 'Set as the default contact',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      defaultLabel: '设为默认联系人',
-    },
-    'en-US': {
-      defaultLabel: 'Set as the default contact',
-    },
-  },
+  setup() {
+    const t = useTranslate(i18n);
+    const editingContact = ref({});
 
-  data() {
-    return {
-      editingContact: {},
+    const onSave = () => {
+      Toast(t('save'));
     };
-  },
+    const onDelete = () => {
+      Toast(t('delete'));
+    };
 
-  methods: {
-    onSave() {
-      this.$toast(this.t('save'));
-    },
-    onDelete() {
-      this.$toast(this.t('delete'));
-    },
+    return {
+      t,
+      onSave,
+      onDelete,
+      editingContact,
+    };
   },
 };
 </script>

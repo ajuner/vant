@@ -1,5 +1,36 @@
 # 更新日志
 
+## v3.1.4
+
+`2020-12-04`
+
+- 支持配置 `babel-preset-env` 的 loose 选项
+
+## v3.1.3
+
+`2020-12-03`
+
+- 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
+- 修复组件内部引用 `.vue` 文件时 build 结果不正确的问题
+
+## v3.1.2
+
+`2020-12-02`
+
+- 修复在 .vue 文件内使用 ts 语法时会导致 build 报错的问题
+
+## v3.1.1
+
+`2020-12-02`
+
+- 支持在 scss 文件中通过 import 引入 node_module 中的文件
+
+## v3.1.0
+
+`2020-12-01`
+
+-  升级 docsearch 3，优化搜索框样式
+
 ## v3.0.0
 
 `2020-11-29`
@@ -10,6 +41,13 @@
 - 升级 Webpack 5
 - 升级 ESLint 7
 - 升级 TypeScript 4
+
+## v2.7.0
+
+`2020-12-03`
+
+- 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
+- 修复组件内部引用 `.vue` 文件时 build 结果不正确的问题
 
 ## v2.6.2
 

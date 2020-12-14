@@ -20,10 +20,13 @@ app.use(CheckboxGroup);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref(true);
     return {
-      checked: true,
+      checked,
     };
   },
 };
@@ -44,7 +47,7 @@ export default {
 ### Custom Color
 
 ```html
-<van-checkbox v-model="checked" checked-color="#07c160">Checkbox</van-checkbox>
+<van-checkbox v-model="checked" checked-color="#ee0a24">Checkbox</van-checkbox>
 ```
 
 ### Custom Icon Size
@@ -73,10 +76,13 @@ Use icon slot to custom icon.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref(true);
     return {
-      checked: true,
+      checked,
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
@@ -95,18 +101,19 @@ export default {
 When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an array and bound with CheckboxGroup by v-model.
 
 ```html
-<van-checkbox-group v-model="result">
+<van-checkbox-group v-model="checked">
   <van-checkbox name="a">Checkbox a</van-checkbox>
   <van-checkbox name="b">Checkbox b</van-checkbox>
 </van-checkbox-group>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      result: ['a', 'b'],
-    };
+  setup() {
+    const checked = ref(['a', 'b']);
+    return { checked };
   },
 };
 ```
@@ -114,18 +121,19 @@ export default {
 ### Horizontal
 
 ```html
-<van-checkbox-group v-model="result" direction="horizontal">
+<van-checkbox-group v-model="checked" direction="horizontal">
   <van-checkbox name="a">Checkbox a</van-checkbox>
   <van-checkbox name="b">Checkbox b</van-checkbox>
 </van-checkbox-group>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      result: [],
-    };
+  setup() {
+    const checked = ref([]);
+    return { checked };
   },
 };
 ```
@@ -143,7 +151,7 @@ export default {
 ### Toggle All
 
 ```html
-<van-checkbox-group v-model="result" ref="checkboxGroup">
+<van-checkbox-group v-model="checked" ref="checkboxGroup">
   <van-checkbox name="a">Checkbox a</van-checkbox>
   <van-checkbox name="b">Checkbox b</van-checkbox>
   <van-checkbox name="c">Checkbox c</van-checkbox>
@@ -154,19 +162,26 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref([]);
+    const checkboxGroup = ref(null);
+
+    const checkAll = () => {
+      checkboxGroup.value.toggleAll(true);
+    }
+    const toggleAll = () => {
+      checkboxGroup.value.toggleAll();
+    },
+
     return {
-      result: [],
+      checked,
+      checkAll,
+      toggleAll,
+      checkboxGroup,
     };
-  },
-  methods: {
-    checkAll() {
-      this.$refs.checkboxGroup.toggleAll(true);
-    },
-    toggleAll() {
-      this.$refs.checkboxGroup.toggleAll();
-    },
   },
 };
 ```
@@ -174,7 +189,7 @@ export default {
 ### Inside a Cell
 
 ```html
-<van-checkbox-group v-model="result">
+<van-checkbox-group v-model="checked">
   <van-cell-group>
     <van-cell
       v-for="(item, index) in list"
@@ -186,7 +201,7 @@ export default {
       <template #right-icon>
         <van-checkbox
           :name="item"
-          :ref="el => checkboxes[index] = el"
+          :ref="el => checkboxRefs[index] = el"
           @click.stop
         />
       </template>
@@ -200,21 +215,21 @@ import { ref, onBeforeUpdate } from 'vue';
 
 export default {
   setup() {
-    const result = ref([]);
-    const checkboxes = ref([]);
+    const checked = ref([]);
+    const checkboxRefs = ref([]);
     const toggle = (index) => {
-      checkboxes.value[index].toggle();
+      checkboxRefs.value[index].toggle();
     };
 
     onBeforeUpdate(() => {
-      checkboxes.value = [];
+      checkboxRefs.value = [];
     });
 
     return {
       list: ['a', 'b'],
-      result,
       toggle,
-      checkboxes,
+      checked,
+      checkboxRefs,
     };
   },
 };
@@ -226,7 +241,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- | --- |
-| v-model (value) | Check status | _boolean_ | `false` |
+| v-model | Check status | _boolean_ | `false` |
 | name | Checkbox name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Disable checkbox | _boolean_ | `false` |
@@ -240,7 +255,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- | --- |
-| v-model (value) | Names of all checked checkboxes | _any[]_ | - |
+| v-model | Names of all checked checkboxes | _any[]_ | - |
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |

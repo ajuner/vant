@@ -19,7 +19,7 @@
   </demo-block>
 
   <demo-block :title="t('customColor')">
-    <van-checkbox v-model="checkbox2" checked-color="#07c160">
+    <van-checkbox v-model="checkbox2" checked-color="#ee0a24">
       {{ t('customColor') }}
     </van-checkbox>
   </demo-block>
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, reactive, toRefs } from 'vue';
 import { useRefs } from '../../composables/use-refs';
 
 export default {
@@ -142,6 +142,21 @@ export default {
   },
 
   setup() {
+    const state = reactive({
+      checkbox1: true,
+      checkbox2: true,
+      checkbox3: true,
+      checkboxShape: true,
+      checkboxLabel: true,
+      checboxIcon: true,
+      list: ['a', 'b'],
+      result: ['a', 'b'],
+      result2: [],
+      result3: [],
+      checkAllResult: [],
+      horizontalResult: [],
+    });
+
     const group = ref();
     const [refs, setRefs] = useRefs();
 
@@ -158,28 +173,12 @@ export default {
     };
 
     return {
+      ...toRefs(state),
       group,
       toggle,
       setRefs,
       checkAll,
       toggleAll,
-    };
-  },
-
-  data() {
-    return {
-      checkbox1: true,
-      checkbox2: true,
-      checkbox3: true,
-      checkboxShape: true,
-      checkboxLabel: true,
-      checboxIcon: true,
-      list: ['a', 'b'],
-      result: ['a', 'b'],
-      result2: [],
-      result3: [],
-      checkAllResult: [],
-      horizontalResult: [],
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };

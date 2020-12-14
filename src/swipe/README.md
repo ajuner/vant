@@ -36,33 +36,26 @@ Use `autoplay` prop to set autoplay interval.
 </style>
 ```
 
-### Image Lazyload
+### Lazy Render
 
-Use [Lazyload](#/en-US/lazyload) component to lazyload image.
+Use `lazy-render` prop to enable lazy rendering.
 
 ```html
-<van-swipe>
-  <van-swipe-item v-for="(image, index) in images" :key="index">
-    <img v-lazy="image" />
+<van-swipe :autoplay="3000" lazy-render>
+  <van-swipe-item v-for="image in images" :key="image">
+    <img :src="image" />
   </van-swipe-item>
 </van-swipe>
 ```
 
 ```js
-import { createApp } from 'vue';
-import { Lazyload } from 'vant';
-
-const app = createApp();
-app.use(Lazyload);
-
 export default {
-  data() {
-    return {
-      images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-      ],
-    };
+  setup() {
+    const images = [
+      'https://img.yzcdn.cn/vant/apple-1.jpg',
+      'https://img.yzcdn.cn/vant/apple-2.jpg',
+    ];
+    return { images };
   },
 };
 ```
@@ -82,10 +75,11 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onChange(index) {
+  setup() {
+    const onChange = (index) => {
       Toast('Current Swipe index:' + index);
-    },
+    };
+    return { onChange };
   },
 };
 ```
@@ -140,16 +134,18 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      current: 0,
+  setup() {
+    const current = ref(0);
+    const onChange = (index) => {
+      current.value = index;
     };
-  },
-  methods: {
-    onChange(index) {
-      this.current = index;
-    },
+    return {
+      current,
+      onChange,
+    };
   },
 };
 ```

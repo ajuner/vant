@@ -15,45 +15,50 @@ module.exports = {
   site: {
     defaultLang: 'en-US',
     versions: [
-      { label: '1.x', link: '/vant/1.x/' },
-      { label: '2.x', link: '/vant/' },
+      { label: 'Vant 1.x', link: '/vant/1.x/' },
+      { label: 'Vant 2.x', link: '/vant/' },
+      { label: 'Vant Weapp', link: '/vant-weapp/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
+    },
+    htmlPluginOptions: {
+      meta: {
+        'docsearch:version': '3.x',
+      },
     },
     locales: {
       'zh-CN': {
         title: 'Vant',
         description: '轻量、可靠的移动端 Vue 组件库',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
-        langLabel: '中文',
+        langLabel: '中',
         links: [
-          {
-            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
-            url: '/vant-weapp',
-          },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
             url: 'https://github.com/youzan/vant',
           },
         ],
-        searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
-          indexName: 'vant',
-          placeholder: '搜索文档...',
-          transformData(hits) {
-            if (location.hostname === 'vant-contrib.gitee.io') {
-              hits.forEach((hit) => {
-                if (hit.url) {
-                  hit.url = hit.url.replace(
-                    'youzan.github.io',
-                    'vant-contrib.gitee.io'
-                  );
-                }
-              });
-            }
-          },
-        },
+        // TODO
+        // searchConfig: {
+        //   apiKey: '90067aecdaa2c85220e2783cd305caac',
+        //   indexName: 'vant',
+        //   searchParameters: {
+        //     facetFilters: ['lang:zh-CN', 'version:3.x'],
+        //   },
+        //   transformItems(items) {
+        //     if (location.hostname !== 'youzan.github.io') {
+        //       items.forEach((item) => {
+        //         if (item.url) {
+        //           item.url =
+        //             item.url &&
+        //             item.url.replace('youzan.github.io', location.hostname);
+        //         }
+        //       });
+        //     }
+        //     return items;
+        //   },
+        // },
         nav: [
           {
             title: '开发指南',
@@ -274,10 +279,10 @@ module.exports = {
                 path: 'image-preview',
                 title: 'ImagePreview 图片预览',
               },
-              // {
-              //   path: 'lazyload',
-              //   title: 'Lazyload 懒加载',
-              // },
+              {
+                path: 'lazyload',
+                title: 'Lazyload 懒加载',
+              },
               {
                 path: 'list',
                 title: 'List 列表',
@@ -404,22 +409,21 @@ module.exports = {
         title: 'Vant',
         description: 'Mobile UI Components built on Vue',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
-        langLabel: 'En',
+        langLabel: 'EN',
         links: [
-          {
-            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
-            url: '/vant-weapp',
-          },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
             url: 'https://github.com/youzan/vant',
           },
         ],
-        searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
-          indexName: 'vant',
-          placeholder: 'Search...',
-        },
+        // TODO
+        // searchConfig: {
+        //   apiKey: '90067aecdaa2c85220e2783cd305caac',
+        //   indexName: 'vant',
+        //   searchParameters: {
+        //     facetFilters: ['lang:en-US', 'version:3.x'],
+        //   },
+        // },
         nav: [
           {
             title: 'Essentials',
@@ -624,10 +628,10 @@ module.exports = {
                 path: 'image-preview',
                 title: 'ImagePreview',
               },
-              // {
-              //   path: 'lazyload',
-              //   title: 'Lazyload',
-              // },
+              {
+                path: 'lazyload',
+                title: 'Lazyload',
+              },
               {
                 path: 'list',
                 title: 'List',

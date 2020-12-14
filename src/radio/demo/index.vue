@@ -33,10 +33,10 @@
 
   <demo-block :title="t('customColor')">
     <van-radio-group v-model="radio3" class="demo-radio-group">
-      <van-radio name="1" checked-color="#07c160">
+      <van-radio name="1" checked-color="#ee0a24">
         {{ t('radio') }} 1
       </van-radio>
-      <van-radio name="2" checked-color="#07c160">
+      <van-radio name="2" checked-color="#ee0a24">
         {{ t('radio') }} 2
       </van-radio>
     </van-radio-group>
@@ -44,12 +44,8 @@
 
   <demo-block :title="t('customIconSize')">
     <van-radio-group v-model="radioIconSize" class="demo-radio-group">
-      <van-radio name="1" checked-color="#07c160" icon-size="24px">
-        {{ t('radio') }} 1
-      </van-radio>
-      <van-radio name="2" checked-color="#07c160" icon-size="24px">
-        {{ t('radio') }} 2
-      </van-radio>
+      <van-radio name="1" icon-size="24px"> {{ t('radio') }} 1 </van-radio>
+      <van-radio name="2" icon-size="24px"> {{ t('radio') }} 2 </van-radio>
     </van-radio-group>
   </demo-block>
 
@@ -58,13 +54,13 @@
       <van-radio name="1">
         {{ t('radio') }} 1
         <template #icon="{ checked }">
-          <img :src="checked ? icon.active : icon.inactive" />
+          <img :src="checked ? activeIcon : inactiveIcon" />
         </template>
       </van-radio>
       <van-radio name="2">
         {{ t('radio') }} 2
         <template #icon="{ checked }">
-          <img :src="checked ? icon.active : icon.inactive" />
+          <img :src="checked ? activeIcon : inactiveIcon" />
         </template>
       </van-radio>
     </van-radio-group>
@@ -96,6 +92,8 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -124,8 +122,8 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       radio1: '1',
       radio2: '2',
       radio3: '1',
@@ -135,10 +133,12 @@ export default {
       radioShape: '1',
       radioIconSize: '1',
       radioHorizontal: '1',
-      icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
-      },
+    });
+
+    return {
+      ...toRefs(state),
+      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
   },
 };

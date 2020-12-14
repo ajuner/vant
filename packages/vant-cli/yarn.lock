@@ -2,6 +2,129 @@
 # yarn lockfile v1
 
 
+"@algolia/autocomplete-core@^1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npm.taobao.org/@algolia/autocomplete-core/download/@algolia/autocomplete-core-1.0.0-alpha.35.tgz#a54949edf7b402da6fd6cf08943438bfb802aa50"
+  integrity sha1-pUlJ7fe0Atpv1s8IlDQ4v7gCqlA=
+  dependencies:
+    "@algolia/autocomplete-shared" "1.0.0-alpha.35"
+
+"@algolia/autocomplete-preset-algolia@^1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npm.taobao.org/@algolia/autocomplete-preset-algolia/download/@algolia/autocomplete-preset-algolia-1.0.0-alpha.35.tgz#b1218a689caa66b607a532c2e363973309764158"
+  integrity sha1-sSGKaJyqZrYHpTLC42OXMwl2QVg=
+  dependencies:
+    "@algolia/autocomplete-shared" "1.0.0-alpha.35"
+
+"@algolia/autocomplete-shared@1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npm.taobao.org/@algolia/autocomplete-shared/download/@algolia/autocomplete-shared-1.0.0-alpha.35.tgz#d6819cb1420a389ac9894199bda2c7abd276fd3d"
+  integrity sha1-1oGcsUIKOJrJiUGZvaLHq9J2/T0=
+
+"@algolia/cache-browser-local-storage@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/cache-browser-local-storage/download/@algolia/cache-browser-local-storage-4.8.2.tgz#e94c50d360c53fc48d107484de2012f3a0bbed9a"
+  integrity sha1-6UxQ02DFP8SNEHSE3iAS86C77Zo=
+  dependencies:
+    "@algolia/cache-common" "4.8.2"
+
+"@algolia/cache-common@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/cache-common/download/@algolia/cache-common-4.8.2.tgz#e992e29ffeec75e2bc77eef5280efca71ac27d56"
+  integrity sha1-6ZLin/7sdeK8d+71KA78pxrCfVY=
+
+"@algolia/cache-in-memory@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/cache-in-memory/download/@algolia/cache-in-memory-4.8.2.tgz#12d66469d5ff7142d092272e01e02abfb6a1315d"
+  integrity sha1-EtZkadX/cULQkicuAeAqv7ahMV0=
+  dependencies:
+    "@algolia/cache-common" "4.8.2"
+
+"@algolia/client-account@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/client-account/download/@algolia/client-account-4.8.2.tgz#ad4066085d871fb5ea10dcf6a40a423480d3bbdc"
+  integrity sha1-rUBmCF2HH7XqENz2pApCNIDTu9w=
+  dependencies:
+    "@algolia/client-common" "4.8.2"
+    "@algolia/client-search" "4.8.2"
+    "@algolia/transporter" "4.8.2"
+
+"@algolia/client-analytics@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/client-analytics/download/@algolia/client-analytics-4.8.2.tgz#29592bc9a2d39a50c17ede959bdc14812edd0fba"
+  integrity sha1-KVkryaLTmlDBft6Vm9wUgS7dD7o=
+  dependencies:
+    "@algolia/client-common" "4.8.2"
+    "@algolia/client-search" "4.8.2"
+    "@algolia/requester-common" "4.8.2"
+    "@algolia/transporter" "4.8.2"
+
+"@algolia/client-common@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/client-common/download/@algolia/client-common-4.8.2.tgz#989ca2a396938db833578a65c63bce1b1785bde9"
+  integrity sha1-mJyio5aTjbgzV4plxjvOGxeFvek=
+  dependencies:
+    "@algolia/requester-common" "4.8.2"
+    "@algolia/transporter" "4.8.2"
+
+"@algolia/client-recommendation@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/client-recommendation/download/@algolia/client-recommendation-4.8.2.tgz#f8483adca6ce829414d8e8c5b58420b22d160d49"
+  integrity sha1-+Eg63KbOgpQU2OjFtYQgsi0WDUk=
+  dependencies:
+    "@algolia/client-common" "4.8.2"
+    "@algolia/requester-common" "4.8.2"
+    "@algolia/transporter" "4.8.2"
+
+"@algolia/client-search@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/client-search/download/@algolia/client-search-4.8.2.tgz#714d1604bfdf5b8ba33247ee571c6f3c2abc6c31"
+  integrity sha1-cU0WBL/fW4ujMkfuVxxvPCq8bDE=
+  dependencies:
+    "@algolia/client-common" "4.8.2"
+    "@algolia/requester-common" "4.8.2"
+    "@algolia/transporter" "4.8.2"
+
+"@algolia/logger-common@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/logger-common/download/@algolia/logger-common-4.8.2.tgz#7cecc05b2725f3d68babdc26aed24f2fb60bc4bf"
+  integrity sha1-fOzAWycl89aLq9wmrtJPL7YLxL8=
+
+"@algolia/logger-console@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/logger-console/download/@algolia/logger-console-4.8.2.tgz#65aca402330f20a23551e63014dc3ff5586ce39b"
+  integrity sha1-ZaykAjMPIKI1UeYwFNw/9Vhs45s=
+  dependencies:
+    "@algolia/logger-common" "4.8.2"
+
+"@algolia/requester-browser-xhr@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/requester-browser-xhr/download/@algolia/requester-browser-xhr-4.8.2.tgz#4f3396aa842e30a8c76916640086a96135b245a9"
+  integrity sha1-TzOWqoQuMKjHaRZkAIapYTWyRak=
+  dependencies:
+    "@algolia/requester-common" "4.8.2"
+
+"@algolia/requester-common@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/requester-common/download/@algolia/requester-common-4.8.2.tgz#42bb83c4d90f9a19ad4728524a763264723cbed4"
+  integrity sha1-QruDxNkPmhmtRyhSSnYyZHI8vtQ=
+
+"@algolia/requester-node-http@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/requester-node-http/download/@algolia/requester-node-http-4.8.2.tgz#29e7a8404193dcf686b16909f1fce9f96f0ba150"
+  integrity sha1-KeeoQEGT3PaGsWkJ8fzp+W8LoVA=
+  dependencies:
+    "@algolia/requester-common" "4.8.2"
+
+"@algolia/transporter@4.8.2":
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/@algolia/transporter/download/@algolia/transporter-4.8.2.tgz#1c401e209d54a20296249158c64ad263891ee057"
+  integrity sha1-HEAeIJ1UogKWJJFYxkrSY4ke4Fc=
+  dependencies:
+    "@algolia/cache-common" "4.8.2"
+    "@algolia/logger-common" "4.8.2"
+    "@algolia/requester-common" "4.8.2"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.8.3":
   version "7.10.4"
   resolved "https://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
@@ -890,6 +1013,29 @@
   dependencies:
     exec-sh "^0.3.2"
     minimist "^1.2.0"
+
+"@docsearch/css@3.0.0-alpha.31":
+  version "3.0.0-alpha.31"
+  resolved "https://registry.npm.taobao.org/@docsearch/css/download/@docsearch/css-3.0.0-alpha.31.tgz#5fb8595201b3f120e5bc4ae4d536068b1a5ca695"
+  integrity sha1-X7hZUgGz8SDlvErk1TYGixpcppU=
+
+"@docsearch/js@3.0.0-alpha.31":
+  version "3.0.0-alpha.31"
+  resolved "https://registry.npm.taobao.org/@docsearch/js/download/@docsearch/js-3.0.0-alpha.31.tgz#a180cb0b790682f41ac2a8e352e84bdd5a6a2807"
+  integrity sha1-oYDLC3kGgvQawqjjUuhL3VpqKAc=
+  dependencies:
+    "@docsearch/react" "3.0.0-alpha.31"
+    preact "^10.0.0"
+
+"@docsearch/react@3.0.0-alpha.31":
+  version "3.0.0-alpha.31"
+  resolved "https://registry.npm.taobao.org/@docsearch/react/download/@docsearch/react-3.0.0-alpha.31.tgz#3389cf4c7695e3a87a14b86e462ae08a8e08b84e"
+  integrity sha1-M4nPTHaV46h6FLhuRirgio4IuE4=
+  dependencies:
+    "@algolia/autocomplete-core" "^1.0.0-alpha.35"
+    "@algolia/autocomplete-preset-algolia" "^1.0.0-alpha.35"
+    "@docsearch/css" "3.0.0-alpha.31"
+    algoliasearch "^4.0.0"
 
 "@eslint/eslintrc@^0.2.1":
   version "0.2.1"
@@ -2025,6 +2171,26 @@ ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.2, ajv@^6.12.4, ajv@^6.12.5, ajv
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+algoliasearch@^4.0.0:
+  version "4.8.2"
+  resolved "https://registry.npm.taobao.org/algoliasearch/download/algoliasearch-4.8.2.tgz#499d187afe2169bc66c921cf7d5271c3fe0b3598"
+  integrity sha1-SZ0Yev4habxmySHPfVJxw/4LNZg=
+  dependencies:
+    "@algolia/cache-browser-local-storage" "4.8.2"
+    "@algolia/cache-common" "4.8.2"
+    "@algolia/cache-in-memory" "4.8.2"
+    "@algolia/client-account" "4.8.2"
+    "@algolia/client-analytics" "4.8.2"
+    "@algolia/client-common" "4.8.2"
+    "@algolia/client-recommendation" "4.8.2"
+    "@algolia/client-search" "4.8.2"
+    "@algolia/logger-common" "4.8.2"
+    "@algolia/logger-console" "4.8.2"
+    "@algolia/requester-browser-xhr" "4.8.2"
+    "@algolia/requester-common" "4.8.2"
+    "@algolia/requester-node-http" "4.8.2"
+    "@algolia/transporter" "4.8.2"
+
 ansi-align@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-3.0.0.tgz#b536b371cf687caaef236c18d3e21fe3797467cb"
@@ -2042,7 +2208,7 @@ ansi-colors@^4.1.1:
   resolved "https://registry.npm.taobao.org/ansi-colors/download/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
   integrity sha1-y7muJWv3UK8eqzRPIpqif+lLo0g=
 
-ansi-escapes@^4.2.1, ansi-escapes@^4.3.0:
+ansi-escapes@^4.2.1, ansi-escapes@^4.3.0, ansi-escapes@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-4.3.1.tgz#a5c47cc43181f1f38ffd7076837700d395522a61"
   integrity sha512-JWF7ocqNrp8u9oqpgV+wH5ftbt+cfvv+PTjOvKLT3AdYly/LmORARfEVT1iyjwN+4MqE5UmVKoAdIBqeoCHgLA==
@@ -3027,7 +3193,7 @@ connect-history-api-fallback@^1.6.0:
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz#8b32089359308d111115d81cad3fceab888f97bc"
   integrity sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==
 
-consola@^2.10.0, consola@^2.15.0, consola@^2.6.0:
+consola@^2.15.0, consola@^2.6.0:
   version "2.15.0"
   resolved "https://registry.npm.taobao.org/consola/download/consola-2.15.0.tgz?cache=0&sync_timestamp=1596625649554&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fconsola%2Fdownload%2Fconsola-2.15.0.tgz#40fc4eefa4d2f8ef2e2806147f056ea207fcc0e9"
   integrity sha1-QPxO76TS+O8uKAYUfwVuogf8wOk=
@@ -4986,9 +5152,9 @@ he@^1.2.0:
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
 highlight.js@^10.3.1:
-  version "10.3.1"
-  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-10.3.1.tgz#3ca6bf007377faae347e8135ff25900aac734b9a"
-  integrity sha512-jeW8rdPdhshYKObedYg5XGbpVgb1/DT4AHvDFXhkU7UnGSIjy9kkJ7zHG7qplhFHMitTSzh5/iClKQk3Kb2RFQ==
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.4.1.tgz#d48fbcf4a9971c4361b3f95f302747afe19dbad0"
+  integrity sha512-yR5lWvNz7c85OhVAEAeFhVCc/GV4C30Fjzc/rCP0aCWzc1UUOPUk55dK/qdwTZHBvMZo+eZ2jpk62ndX/xMFlg==
 
 hosted-git-info@^2.1.4:
   version "2.8.8"
@@ -5307,9 +5473,9 @@ inherits@2.0.3:
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
 ini@^1.3.2, ini@^1.3.5, ini@~1.3.0:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
-  integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
+  integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
 inquirer@7.3.3:
   version "7.3.3"
@@ -7919,6 +8085,11 @@ postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+preact@^10.0.0:
+  version "10.5.7"
+  resolved "https://registry.npm.taobao.org/preact/download/preact-10.5.7.tgz#f1d84725539e18f7ccbea937cf3db5895661dbd3"
+  integrity sha1-8dhHJVOeGPfMvqk3zz21iVZh29M=
+
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -10122,10 +10293,10 @@ vue-eslint-parser@^7.1.1:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
-vue-jest@^5.0.0-alpha.6:
-  version "5.0.0-alpha.6"
-  resolved "https://registry.npm.taobao.org/vue-jest/download/vue-jest-5.0.0-alpha.6.tgz?cache=0&sync_timestamp=1605609414836&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-jest%2Fdownload%2Fvue-jest-5.0.0-alpha.6.tgz#76615809ba84278e7cd3b7d6d3cc7f18caa2e893"
-  integrity sha1-dmFYCbqEJ45807fW08x/GMqi6JM=
+vue-jest@^5.0.0-alpha.7:
+  version "5.0.0-alpha.7"
+  resolved "https://registry.npm.taobao.org/vue-jest/download/vue-jest-5.0.0-alpha.7.tgz#e5a1eb376afae4a5b4b207218befc3614369eaa9"
+  integrity sha1-5aHrN2r65KW0sgchi+/DYUNp6qk=
   dependencies:
     "@babel/plugin-transform-modules-commonjs" "^7.2.0"
     chalk "^2.1.0"
@@ -10304,19 +10475,19 @@ webpack@^5.6.0:
     watchpack "^2.0.0"
     webpack-sources "^2.1.1"
 
-webpackbar@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/webpackbar/-/webpackbar-4.0.0.tgz#ee7a87f16077505b5720551af413c8ecd5b1f780"
-  integrity sha512-k1qRoSL/3BVuINzngj09nIwreD8wxV4grcuhHTD8VJgUbGcy8lQSPqv+bM00B7F+PffwIsQ8ISd4mIwRbr23eQ==
+webpackbar@^5.0.0-3:
+  version "5.0.0-3"
+  resolved "https://registry.npm.taobao.org/webpackbar/download/webpackbar-5.0.0-3.tgz#f4f96c8fb13001b2bb1348252db4c980ab93aaac"
+  integrity sha1-9Plsj7EwAbK7E0glLbTJgKuTqqw=
   dependencies:
-    ansi-escapes "^4.2.1"
-    chalk "^2.4.2"
-    consola "^2.10.0"
-    figures "^3.0.0"
+    ansi-escapes "^4.3.1"
+    chalk "^4.1.0"
+    consola "^2.15.0"
+    figures "^3.2.0"
     pretty-time "^1.1.0"
     std-env "^2.2.1"
     text-table "^0.2.0"
-    wrap-ansi "^6.0.0"
+    wrap-ansi "^7.0.0"
 
 websocket-driver@0.6.5:
   version "0.6.5"
@@ -10429,10 +10600,19 @@ wrap-ansi@^5.1.0:
     string-width "^3.0.0"
     strip-ansi "^5.0.0"
 
-wrap-ansi@^6.0.0, wrap-ansi@^6.2.0:
+wrap-ansi@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
   integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npm.taobao.org/wrap-ansi/download/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha1-Z+FFz/UQpqaYS98RUpEdadLrnkM=
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"

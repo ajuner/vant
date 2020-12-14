@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "3.0.0-beta.10",
+  "version": "3.0.0-rc.3",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -16,7 +16,6 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "bootstrap": "yarn || npm i",
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
     "test": "vant-cli test",
@@ -58,18 +57,18 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.x",
-    "@vant/icons": "1.4.0",
-    "@vant/use": "^0.1.0",
-    "@vant/popperjs": "^1.0.0",
-    "vue-lazyload": "1.2.3"
+    "@vant/icons": "^1.4.0",
+    "@vant/lazyload": "^1.0.2",
+    "@vant/popperjs": "^1.0.2",
+    "@vant/use": "^0.1.0"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.0.0",
-    "@vue/compiler-sfc": "^3.0.3",
-    "vue": "^3.0.3"
+    "@vant/cli": "^3.1.4",
+    "@vue/compiler-sfc": "3.0.3",
+    "vue": "3.0.3"
   },
   "sideEffects": [
     "es/**/style/*",
@@ -82,21 +81,6 @@
     "attributes": "vetur/attributes.json"
   },
   "web-types": "vetur/web-types.json",
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@vant"
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "@vant/stylelint-config"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "proseWrap": "never"
-  },
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 8"

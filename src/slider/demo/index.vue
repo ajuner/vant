@@ -51,34 +51,39 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      text: '当前值：',
-      title1: '基础用法',
-      title2: '双滑块',
-      title3: '指定选择范围',
-      title4: '禁用',
-      title5: '指定步长',
-      vertical: '垂直方向',
-      customStyle: '自定义样式',
-      customButton: '自定义按钮',
-    },
-    'en-US': {
-      text: 'Current value: ',
-      title1: 'Basic Usage',
-      title2: 'Dual thumb mode',
-      title3: 'Range',
-      title4: 'Disabled',
-      title5: 'Step size',
-      vertical: 'Vertical',
-      customStyle: 'Custom Style',
-      customButton: 'Custom Button',
-    },
-  },
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    text: '当前值：',
+    title1: '基础用法',
+    title2: '双滑块',
+    title3: '指定选择范围',
+    title4: '禁用',
+    title5: '指定步长',
+    vertical: '垂直方向',
+    customStyle: '自定义样式',
+    customButton: '自定义按钮',
+  },
+  'en-US': {
+    text: 'Current value: ',
+    title1: 'Basic Usage',
+    title2: 'Dual thumb mode',
+    title3: 'Range',
+    title4: 'Disabled',
+    title5: 'Step size',
+    vertical: 'Vertical',
+    customStyle: 'Custom Style',
+    customButton: 'Custom Button',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       value1: 50,
       value2: [20, 60],
       value3: 0,
@@ -88,13 +93,17 @@ export default {
       value7: 50,
       value8: 50,
       value9: [20, 60],
-    };
-  },
+    });
 
-  methods: {
-    onChange(value) {
-      this.$toast(this.t('text') + value);
-    },
+    const onChange = (value) => {
+      Toast(t('text') + value);
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      onChange,
+    };
   },
 };
 </script>

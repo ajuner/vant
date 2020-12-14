@@ -16,6 +16,65 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0-rc.3](https://github.com/youzan/vant/compare/v2.11.2...v3.0.0-rc.3)
+
+`2020-12-10`
+
+**Breaking Change**
+
+- Stepper: `async-change` 属性重命名为 `before-change`，并调整使用方法 [e026d2](https://github.com/youzan/vant/commit/e026d2d83f66bb25c66f805cf8085de70d8e009f)
+
+**perf**
+
+- Stepper: 优化代码包体积 [#7675](https://github.com/youzan/vant/issues/7675)
+
+**Bug Fixes**
+
+- Stepper: 修复禁用按钮仍然能点击的问题 [c27760](https://github.com/youzan/vant/commit/c277603160a7a17685dc532304b9a0c2444db959)
+- Tabs: 修复动态设置 active 值无效的问题 [#7717](https://github.com/youzan/vant/issues/7717)
+
+### [v3.0.0-rc.2](https://github.com/youzan/vant/compare/v3.0.0-rc.1...v3.0.0-rc.2)
+
+`2020-12-04`
+
+**perf**
+
+- 优化包体积大小 [#7675](https://github.com/youzan/vant/issues/7675)
+
+**Bug Fixes**
+
+- Lazyload: 修复未导出 ESModule 的问题 [#7685](https://github.com/youzan/vant/issues/7685)
+- NumberKeyboard: 修复 hide-on-click-outside 属性不生效的问题 [#7668](https://github.com/youzan/vant/issues/7668) [#7667](https://github.com/youzan/vant/issues/7667)
+- Uploader: 修复动态修改 status 不生效的问题 [#7681](https://github.com/youzan/vant/issues/7681)
+- Types: 修复 teleport 类型定义错误的问题 [#7687](https://github.com/youzan/vant/issues/7687)
+
+### [v3.0.0-rc.1](https://github.com/youzan/vant/compare/v2.11.1...v3.0.0-rc.1)
+
+`2020-12-01`
+
+**Breaking Change**
+
+- Popover: trigger 属性的默认值调整为 click [1699d9](https://github.com/youzan/vant/commit/1699d9927240373867f065355136fd27ac04b0e5)
+
+**Feature**
+
+- Lazyload: 适配 Vue 3 [d3ca40](https://github.com/youzan/vant/commit/d3ca404f98ffd572035d7048c949e8942b89fc55)
+- 包含 `v2.11.1` 版本的所有改动和修复
+
+**style**
+
+- Circle: 新增 @circle-color Less 变量 [1a6cf6](https://github.com/youzan/vant/commit/1a6cf64f548bb19c6bd478db67f2e0a1d7c9a145)
+- Circle: 新增 @circle-layer-color Less 变量 [65a5ed](https://github.com/youzan/vant/commit/65a5ed85537b7a406655bd39f7e4f5332d780a82)
+- Circle: 新增 @circle-size Less 变量 [b57f7e](https://github.com/youzan/vant/commit/b57f7e9d9810ce95047334f0897899ebddaac6f3)
+- IndexBar: 默认高亮颜色调整为红色 [65b680](https://github.com/youzan/vant/commit/65b6807a7e6b8a415b5f228c5d55426cd81a1dfa) [87b0a0](https://github.com/youzan/vant/commit/87b0a034958296a720409ded893e708081c35bc5)
+- IndexBar: 右边距调整为 8px [aad055](https://github.com/youzan/vant/commit/aad055906484d8b6c38a9f84a768f09522b13a41)
+
+**Bug Fixes**
+
+- Image: 修复 lazy-load 属性不生效的问题 [0ba818](https://github.com/youzan/vant/commit/0ba8187bf540abc0c593c6571554f1b72e8d3e19)
+- Lazyload: 修复类型定义错误的问题 [d0c4c2](https://github.com/youzan/vant/commit/d0c4c26d758f18ac3f33fc7d4867a98b731b129d)
+- Popup: 修复 transition-appear 属性不生效的问题 [dd6930](https://github.com/youzan/vant/commit/dd6930533593a363e25f56717e5c17184ef6e867)
+
 ### [v3.0.0-beta.10](https://github.com/youzan/vant/compare/v3.0.0-beta.9...v3.0.0-beta.10)
 
 `2020-11-22`

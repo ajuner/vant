@@ -25,11 +25,12 @@ app.use(Search);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '',
-    };
+  setup() {
+    const value = ref('');
+    return { value };
   },
 };
 ```
@@ -51,21 +52,23 @@ Search 组件提供了 `search` 和 `cancel` 事件，`search` 事件在点击�
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      value: '',
-    };
-  },
-  methods: {
-    onSearch(val) {
+  setup() {
+    const value = ref('');
+    const onSearch = (val) => {
       Toast(val);
-    },
-    onCancel() {
+    };
+    const onCancel = () => {
       Toast('取消');
-    },
+    };
+    return {
+      value,
+      onSearch,
+      onCancel,
+    };
   },
 };
 ```
@@ -148,14 +151,14 @@ export default {
 
 ### Events
 
-| 事件名 | 说明                 | 回调参数                       |
-| ------ | -------------------- | ------------------------------ |
-| search | 确定搜索时触发       | _value: string (当前输入的值)_ |
-| input  | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
-| focus  | 输入框获得焦点时触发 | _event: Event_                 |
-| blur   | 输入框失去焦点时触发 | _event: Event_                 |
-| clear  | 点击清除按钮后触发   | _event: Event_                 |
-| cancel | 点击取消按钮时触发   | -                              |
+| 事件名             | 说明                 | 回调参数                       |
+| ------------------ | -------------------- | ------------------------------ |
+| search             | 确定搜索时触发       | _value: string (当前输入的值)_ |
+| update:model-value | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
+| focus              | 输入框获得焦点时触发 | _event: Event_                 |
+| blur               | 输入框失去焦点时触发 | _event: Event_                 |
+| clear              | 点击清除按钮后触发   | _event: Event_                 |
+| cancel             | 点击取消按钮时触发   | -                              |
 
 ### 方法
 

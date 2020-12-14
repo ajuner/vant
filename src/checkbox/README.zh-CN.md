@@ -26,11 +26,12 @@ app.use(CheckboxGroup);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
+  setup() {
+    const checked = ref(true);
+    return { checked };
   },
 };
 ```
@@ -56,7 +57,7 @@ export default {
 通过 `checked-color` 属性设置选中状态的图标颜色。
 
 ```html
-<van-checkbox v-model="checked" checked-color="#07c160">复选框</van-checkbox>
+<van-checkbox v-model="checked" checked-color="#ee0a24">复选框</van-checkbox>
 ```
 
 ### 自定义大小
@@ -87,10 +88,13 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref(true);
     return {
-      checked: true,
+      checked,
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
@@ -111,18 +115,19 @@ export default {
 复选框可以与复选框组一起使用，复选框组通过 `v-model` 数组绑定复选框的勾选状态。
 
 ```html
-<van-checkbox-group v-model="result">
+<van-checkbox-group v-model="checked">
   <van-checkbox name="a">复选框 a</van-checkbox>
   <van-checkbox name="b">复选框 b</van-checkbox>
 </van-checkbox-group>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      result: ['a', 'b'],
-    };
+  setup() {
+    const checked = ref(['a', 'b']);
+    return { checked };
   },
 };
 ```
@@ -132,18 +137,19 @@ export default {
 将 `direction` 属性设置为 `horizontal` 后，复选框组会变成水平排列。
 
 ```html
-<van-checkbox-group v-model="result" direction="horizontal">
+<van-checkbox-group v-model="checked" direction="horizontal">
   <van-checkbox name="a">复选框 a</van-checkbox>
   <van-checkbox name="b">复选框 b</van-checkbox>
 </van-checkbox-group>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      result: [],
-    };
+  setup() {
+    const checked = ref([]);
+    return { checked };
   },
 };
 ```
@@ -176,19 +182,26 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref([]);
+    const checkboxGroup = ref(null);
+
+    const checkAll = () => {
+      checkboxGroup.value.toggleAll(true);
+    }
+    const toggleAll = () => {
+      checkboxGroup.value.toggleAll();
+    },
+
     return {
-      result: [],
+      checked,
+      checkAll,
+      toggleAll,
+      checkboxGroup,
     };
-  },
-  methods: {
-    checkAll() {
-      this.$refs.checkboxGroup.toggleAll(true);
-    },
-    toggleAll() {
-      this.$refs.checkboxGroup.toggleAll();
-    },
   },
 };
 ```
@@ -198,7 +211,7 @@ export default {
 此时你需要再引入 `Cell` 和 `CellGroup` 组件，并通过 `Checkbox` 实例上的 toggle 方法触发切换。
 
 ```html
-<van-checkbox-group v-model="result">
+<van-checkbox-group v-model="checked">
   <van-cell-group>
     <van-cell
       v-for="(item, index) in list"
@@ -210,7 +223,7 @@ export default {
       <template #right-icon>
         <van-checkbox
           :name="item"
-          :ref="el => checkboxes[index] = el"
+          :ref="el => checkboxRefs[index] = el"
           @click.stop
         />
       </template>
@@ -224,21 +237,21 @@ import { ref, onBeforeUpdate } from 'vue';
 
 export default {
   setup() {
-    const result = ref([]);
-    const checkboxes = ref([]);
+    const checked = ref([]);
+    const checkboxRefs = ref([]);
     const toggle = (index) => {
-      checkboxes.value[index].toggle();
+      checkboxRefs.value[index].toggle();
     };
 
     onBeforeUpdate(() => {
-      checkboxes.value = [];
+      checkboxRefs.value = [];
     });
 
     return {
       list: ['a', 'b'],
-      result,
       toggle,
-      checkboxes,
+      checked,
+      checkboxRefs,
     };
   },
 };
@@ -248,23 +261,23 @@ export default {
 
 ### Checkbox Props
 
-| 参数            | 说明                      | 类型               | 默认值    |
-| --------------- | ------------------------- | ------------------ | --------- |
-| v-model (value) | 是否为选中状态            | _boolean_          | `false`   |
-| name            | 标识符                    | _any_              | -         |
-| shape           | 形状，可选值为 `square`   | _string_           | `round`   |
-| disabled        | 是否禁用复选框            | _boolean_          | `false`   |
-| label-disabled  | 是否禁用复选框文本点击    | _boolean_          | `false`   |
-| label-position  | 文本位置，可选值为 `left` | _string_           | `right`   |
-| icon-size       | 图标大小，默认单位为 `px` | _number \| string_ | `20px`    |
-| checked-color   | 选中状态颜色              | _string_           | `#1989fa` |
-| bind-group      | 是否与复选框组绑定        | _boolean_          | `true`    |
+| 参数           | 说明                      | 类型               | 默认值    |
+| -------------- | ------------------------- | ------------------ | --------- |
+| v-model        | 是否为选中状态            | _boolean_          | `false`   |
+| name           | 标识符                    | _any_              | -         |
+| shape          | 形状，可选值为 `square`   | _string_           | `round`   |
+| disabled       | 是否禁用复选框            | _boolean_          | `false`   |
+| label-disabled | 是否禁用复选框文本点击    | _boolean_          | `false`   |
+| label-position | 文本位置，可选值为 `left` | _string_           | `right`   |
+| icon-size      | 图标大小，默认单位为 `px` | _number \| string_ | `20px`    |
+| checked-color  | 选中状态颜色              | _string_           | `#1989fa` |
+| bind-group     | 是否与复选框组绑定        | _boolean_          | `true`    |
 
 ### CheckboxGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model (value) | 所有选中项的标识符 | _any[]_ | - |
+| v-model | 所有选中项的标识符 | _any[]_ | - |
 | disabled | 是否禁用所有复选框 | _boolean_ | `false` |
 | max | 最大可选数，`0`为无限制 | _number \| string_ | `0` |
 | direction `v2.5.0` | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |

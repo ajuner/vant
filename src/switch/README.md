@@ -19,11 +19,12 @@ app.use(Switch);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
+  setup() {
+    const checked = ref(true);
+    return { checked };
   },
 };
 ```
@@ -49,7 +50,7 @@ export default {
 ### Custom Color
 
 ```html
-<van-switch v-model="checked" active-color="#07c160" inactive-color="#ee0a24" />
+<van-switch v-model="checked" active-color="#ee0a24" inactive-color="#dcdee0" />
 ```
 
 ### Async Control
@@ -59,21 +60,25 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+import { Dialog } from 'vant';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
-  },
-  methods: {
-    onUpdateValue(checked) {
+  setup() {
+    const checked = ref(true);
+    const onUpdateValue = (newValue) => {
       Dialog.confirm({
         title: 'Confirm',
         message: 'Are you sure to toggle switch?',
       }).then(() => {
-        this.checked = checked;
+        checked.value = newValue;
       });
-    },
+    };
+
+    return {
+      checked,
+      onUpdateValue,
+    };
   },
 };
 ```

@@ -62,7 +62,6 @@ export function parseSfc(filename: string) {
 export async function compileSfc(filePath: string): Promise<any> {
   const tasks = [remove(filePath)];
   const source = readFileSync(filePath, 'utf-8');
-  const jsFilePath = replaceExt(filePath, '.js');
   const descriptor = parseSfc(filePath);
   const { template, styles } = descriptor;
 
@@ -71,6 +70,9 @@ export async function compileSfc(filePath: string): Promise<any> {
 
   // compile js part
   if (descriptor.script) {
+    const lang = descriptor.script.lang || 'js';
+    const scriptFilePath = replaceExt(filePath, `.${lang}`);
+
     tasks.push(
       new Promise((resolve, reject) => {
         let script = descriptor.script!.content;
@@ -78,6 +80,7 @@ export async function compileSfc(filePath: string): Promise<any> {
 
         if (template) {
           const render = compileTemplate({
+            id: scopeId,
             source: template.content,
             filename: filePath,
           }).code;
@@ -88,8 +91,8 @@ export async function compileSfc(filePath: string): Promise<any> {
           script = injectScopeId(script, scopeId);
         }
 
-        writeFileSync(jsFilePath, script);
-        compileJs(jsFilePath).then(resolve).catch(reject);
+        writeFileSync(scriptFilePath, script);
+        compileJs(scriptFilePath).then(resolve).catch(reject);
       })
     );
   }

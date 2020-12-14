@@ -25,11 +25,12 @@ app.use(Switch);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
+  setup() {
+    const checked = ref(true);
+    return { checked };
   },
 };
 ```
@@ -63,7 +64,7 @@ export default {
 `active-color` 属性表示打开时的背景色，`inactive-color` 表示关闭时的背景色。
 
 ```html
-<van-switch v-model="checked" active-color="#07c160" inactive-color="#ee0a24" />
+<van-switch v-model="checked" active-color="#ee0a24" inactive-color="#dcdee0" />
 ```
 
 ### 异步控制
@@ -75,21 +76,25 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+import { Dialog } from 'vant';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
-  },
-  methods: {
-    onUpdateValue(checked) {
+  setup() {
+    const checked = ref(true);
+    const onUpdateValue = (newValue) => {
       Dialog.confirm({
         title: '提醒',
         message: '是否切换开关？',
       }).then(() => {
-        this.checked = checked;
+        checked.value = newValue;
       });
-    },
+    };
+
+    return {
+      checked,
+      onUpdateValue,
+    };
   },
 };
 ```
